@@ -521,7 +521,7 @@
     <div class="nav-logo">
       <img src="images/logo-jogo-rapido.png" alt="Jogo Rápido - Chapeação e Estética Automotiva">
     </div>
-    <nav class="nav-links">
+    <nav class="nav-links" id="navLinks">
       <a href="#servicos">Serviços</a>
       <a href="#sobre">Sobre</a>
       <a href="#antes-depois">Antes e depois</a>
@@ -789,6 +789,14 @@
   range.addEventListener('input', (e)=>{ update(e.target.value); });
   window.addEventListener('resize', ()=>{ update(range.value); });
   update(range.value);
+
+  /* MENU MOBILE */
+const burger = document.getElementById("burger");
+const navLinks = document.getElementById("navLinks");
+
+burger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
 </script>
 
 </body>
