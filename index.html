@@ -91,13 +91,68 @@
     background:transparent;color:var(--white);border:1px solid var(--line);
   }
   .btn-ghost:hover{border-color:var(--white);}
-  .nav-cta{display:none;}
-  @media(min-width:860px){.nav-cta{display:inline-flex;}}
-  .nav-links{display:none;}
-  @media(min-width:860px){.nav-links{display:flex;}}
-  .burger{display:flex;font-size:28px;background:none;border:none;color:var(--white);cursor:pointer;}
-  @media(min-width:860px){.burger{display:none;}}
+  /* ---------- MENU RESPONSIVO ---------- */
 
+.nav-cta {
+    display: none;
+}
+
+.nav-links {
+    display: none;
+}
+
+.burger {
+    display: flex;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+}
+
+@media (min-width: 860px) {
+
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+    }
+
+    .nav-cta {
+        display: inline-flex;
+    }
+
+    .burger {
+        display: none;
+    }
+
+}
+
+@media (max-width: 859px) {
+
+    .nav {
+        position: relative;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 74px;
+        left: 0;
+        width: 100%;
+        background: var(--bg);
+        padding: 20px;
+        border-top: 1px solid var(--line);
+        gap: 18px;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+}
   /* ---------- HERO ---------- */
   .hero{
     position:relative;
@@ -474,6 +529,9 @@
       <a href="#depoimentos">Depoimentos</a>
       <a href="#contato">Contato</a>
     </nav>
+    <button class="burger" id="burger" aria-label="Abrir menu">
+  ☰
+</button>
     <a class="btn nav-cta" href="https://wa.me/5549984020676" target="_blank" rel="noopener">Chamar no WhatsApp</a>
   </div>
 </header>
